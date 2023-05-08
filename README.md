@@ -1,6 +1,6 @@
 # Kataru Frontend
 
-A fun app to write your stories with!
+A fun app to write your stories with! Built using React, Typescript, and Sass.
 
 ### `npm start`
 
