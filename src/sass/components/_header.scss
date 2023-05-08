@@ -1,0 +1,29 @@
+.header {
+  height: 90vh;
+  padding: 2rem;
+  background-color: rgba($amber, 0.2);
+  display: flex;
+  gap: 2rem;
+
+  &__hero {
+    width: 70%;
+    margin: 1rem;
+    border-radius: 5px;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($blue-violet, 0.4),
+        rgba($azure, 0.6)
+      ),
+      url(../../img/girl_reader.png);
+    background-size: cover; // scale to fit on resize
+    background-position: top; // area not to crop on resize
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    color: $rose;
+    font-size: 3rem;
+  }
+}
