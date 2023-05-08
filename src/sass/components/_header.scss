@@ -6,6 +6,8 @@
   gap: 2rem;
 
   &__hero {
+    animation: slide-fade-in 1s;
+
     width: 70%;
     margin: 1rem;
     border-radius: 5px;
