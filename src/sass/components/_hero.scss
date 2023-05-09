@@ -19,7 +19,7 @@
     height: 5rem;
 
     &--link {
-      transition: all 0.5s;
+      transition: all 0.3s;
 
       &:link,
       &:visited {
@@ -85,6 +85,7 @@
     background-size: cover; // scale to fit on resize
     background-position: top; // area not to crop on resize
 
+    // added on load
     &--loaded {
       animation: slide-fade-in 1s;
     }

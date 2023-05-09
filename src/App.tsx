@@ -4,18 +4,29 @@ import "./sass/main.scss";
 // import doc from "./img/icons/doc.png";
 
 // Hero images
-import image1 from "./img/hero1.png";
-import image2 from "./img/hero2.png";
-import image3 from "./img/hero3.png";
-import image4 from "./img/hero4.png";
-import image5 from "./img/hero5.png";
-import image6 from "./img/hero6.png";
+import image1 from "./img/hero/hero1.png";
+import image2 from "./img/hero/hero2.png";
+import image3 from "./img/hero/hero3.png";
+import image4 from "./img/hero/hero4.png";
+import image5 from "./img/hero/hero5.png";
+import image6 from "./img/hero/hero6.png";
 
 function App() {
   const [currentImg, setCurrentImg] = useState({ index: 0, isLoaded: true });
 
   // Array of images to loop
   const images = [image1, image2, image3, image4, image5, image6];
+
+  // PRELOAD IMAGES
+  // Create new Image object for each image
+  // Setting src attribute to image URL will cause to be downloaded and cached
+  useEffect(() => {
+    const preloadedImg = images.map((image) => {
+      const img = new Image();
+      img.src = image;
+      return image;
+    });
+  }, [images]);
 
   // For each tick, update index and set isLoaded to false
   useEffect(() => {
