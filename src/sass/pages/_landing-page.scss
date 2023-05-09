@@ -8,8 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1; // allow grow or shrink to fill space
-    padding: 3rem;
-    padding-right: 0;
+    padding: 1rem 0 1rem 3rem;
   }
 
   &__nav {
@@ -17,33 +16,44 @@
     align-items: center;
     justify-content: space-between;
     height: 5rem;
-    border-bottom: 1px solid $color-grey-dark;
 
     &--link {
-      font-size: $default-font-size;
-      cursor: pointer;
-      text-decoration: none;
-      color: $color-grey-dark;
+      transition: all 0.5s;
+
+      &:link,
+      &:visited {
+        font-size: $default-font-size;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        color: $color-black;
+      }
+      &:hover,
+      &:active {
+        color: $orange-pantone;
+      }
+    }
+
+    &--img {
+      height: 60%;
     }
   }
 
   &__main {
-    font-size: 4rem;
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    align-items: left; // vertically
-    justify-content: center; // horizontally
   }
 
   &__heading-primary {
     text-transform: uppercase;
-    margin-bottom: 3rem;
+    margin-bottom: $margin-small;
     font-weight: 700;
 
     &--main {
       font-size: $font-size-huge;
       color: $orange-pantone;
+      display: block;
+      margin-bottom: $margin-medium;
     }
 
     &--sub {
@@ -53,6 +63,7 @@
   }
 
   &__heading-secondary {
+    color: $color-grey-dark;
     font-size: $font-size-medium;
     font-style: italic;
   }
@@ -64,9 +75,6 @@
   }
 
   &__right {
-    animation: slide-fade-in 1s;
-    background-color: grey;
-
     width: 50%; // define
     background-image: linear-gradient(
         to right bottom,
@@ -76,5 +84,7 @@
       url(../../img/girl_reader.png);
     background-size: cover; // scale to fit on resize
     background-position: top; // area not to crop on resize
+
+    animation: slide-fade-in 1s;
   }
 }
