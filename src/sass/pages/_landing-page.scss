@@ -1,0 +1,80 @@
+.hero {
+  height: 90vh;
+  display: flex;
+  gap: 4rem;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1; // allow grow or shrink to fill space
+    padding: 3rem;
+    padding-right: 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+    border-bottom: 1px solid $color-grey-dark;
+
+    &--link {
+      font-size: $default-font-size;
+      cursor: pointer;
+      text-decoration: none;
+      color: $color-grey-dark;
+    }
+  }
+
+  &__main {
+    font-size: 4rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: left; // vertically
+    justify-content: center; // horizontally
+  }
+
+  &__heading-primary {
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    font-weight: 700;
+
+    &--main {
+      font-size: $font-size-huge;
+      color: $orange-pantone;
+    }
+
+    &--sub {
+      font-size: $font-size-large;
+      display: block;
+    }
+  }
+
+  &__heading-secondary {
+    font-size: $font-size-medium;
+    font-style: italic;
+  }
+
+  &__detail {
+    width: 55%;
+    font-size: $default-font-size;
+    color: $color-grey-dark;
+  }
+
+  &__right {
+    animation: slide-fade-in 1s;
+    background-color: grey;
+
+    width: 50%; // define
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($blue-violet, 0.4),
+        rgba($azure, 0.7)
+      ),
+      url(../../img/girl_reader.png);
+    background-size: cover; // scale to fit on resize
+    background-position: top; // area not to crop on resize
+  }
+}
