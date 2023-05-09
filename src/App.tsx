@@ -1,54 +1,29 @@
 import { useState, useEffect, Fragment } from "react";
 import "./sass/main.scss";
 
-// Hero images
-import image1 from "./img/hero/hero1.png";
-import image2 from "./img/hero/hero2.png";
-import image3 from "./img/hero/hero3.png";
-import image4 from "./img/hero/hero4.png";
-import image5 from "./img/hero/hero5.png";
-import image6 from "./img/hero/hero6.png";
+const IMAGE_LIST = [
+  "hero1.png",
+  "hero2.png",
+  "hero3.png",
+  "hero4.png",
+  "hero5.png",
+  "hero6.png",
+];
+const TRANSITION_DELAY_MS = 5000;
 
 function App() {
-  const [currentImg, setCurrentImg] = useState({ index: 0, isLoaded: true });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
 
-  // Array of images to loop
-  const images = [image1, image2, image3, image4, image5, image6];
-
-  // PRELOAD IMAGES
-  useEffect(() => {
-    images.forEach((image) => {
-      const img = new Image();
-      img.src = image;
-    });
-  }, [images]);
-
-  // Every 5s, update index and set isLoaded to false
+  // Cycle indices while component mounted
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImg((currentImg) => {
-        const nextIndex =
-          currentImg.index === images.length - 1 ? 0 : currentImg.index + 1;
+      setCurrentIndex((currentIndex + 1) % IMAGE_LIST.length);
+      setNextIndex((nextIndex + 1) % IMAGE_LIST.length);
+    }, TRANSITION_DELAY_MS);
 
-        return { index: nextIndex, isLoaded: false };
-      });
-    }, 8000);
-    // clear on unmount
     return () => clearInterval(interval);
-  }, []);
-
-  // Once loaded, then set isLoaded to 'true' to add class for animation
-  useEffect(() => {
-    const img = new Image();
-    img.src = images[currentImg.index];
-    img.onload = () => {
-      setCurrentImg((currentImg) => {
-        // set isLoaded to true
-        return { index: currentImg.index, isLoaded: true };
-      });
-    };
-    // TODO check dependency array here...
-  }, [currentImg.index, images]);
+  }, [currentIndex, nextIndex]);
 
   return (
     <Fragment>
@@ -79,17 +54,27 @@ function App() {
             </p>
           </div>
         </div>
-        <div
-          className={`hero__right ${
-            currentImg.isLoaded ? "hero__right--loaded" : ""
-          }`}
-          style={{
-            backgroundImage: `linear-gradient(to right bottom, rgba(131, 56, 236, 0.4), rgba(58, 134, 255, 0.7)), url(${
-              images[currentImg.index]
-            })`,
-          }}
-        ></div>
+        <div className="hero__right">
+          <div className="hero__slider">
+            {IMAGE_LIST.map((imageUrl, index) => (
+              <img
+                key={index}
+                className={`hero__slider--image ${
+                  index === currentIndex
+                    ? "active"
+                    : index === nextIndex
+                    ? "next"
+                    : "prev"
+                }`}
+                src={process.env.PUBLIC_URL + "/img/hero/" + imageUrl}
+                alt="Slider"
+              />
+            ))}
+          </div>
+          <div className="hero__gradient"></div>
+        </div>
       </section>
+
       <section className="about">
         <div>HOW DOES IT WORK?</div>
       </section>
