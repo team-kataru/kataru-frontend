@@ -1,8 +1,6 @@
 import { useState, useEffect, Fragment } from "react";
 import "./sass/main.scss";
 
-// import doc from "./img/icons/doc.png";
-
 // Hero images
 import image1 from "./img/hero/hero1.png";
 import image2 from "./img/hero/hero2.png";
@@ -18,17 +16,14 @@ function App() {
   const images = [image1, image2, image3, image4, image5, image6];
 
   // PRELOAD IMAGES
-  // Create new Image object for each image
-  // Setting src attribute to image URL will cause to be downloaded and cached
   useEffect(() => {
-    const preloadedImg = images.map((image) => {
+    images.forEach((image) => {
       const img = new Image();
       img.src = image;
-      return image;
     });
   }, [images]);
 
-  // For each tick, update index and set isLoaded to false
+  // Every 5s, update index and set isLoaded to false
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImg((currentImg) => {
@@ -37,12 +32,12 @@ function App() {
 
         return { index: nextIndex, isLoaded: false };
       });
-    }, 5000);
+    }, 8000);
     // clear on unmount
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, []);
 
-  // Track loading, then set isLoaded to 'true' to add class for animation
+  // Once loaded, then set isLoaded to 'true' to add class for animation
   useEffect(() => {
     const img = new Image();
     img.src = images[currentImg.index];
@@ -59,12 +54,10 @@ function App() {
     <Fragment>
       <section className="hero">
         <div className="hero__left">
-          {/* TODO Rethink order - main at top? */}
           <div className="hero__nav">
             <a href="#" className="hero__nav--link">
               Sign me up!
             </a>
-            {/* <img   src={doc} alt="Image of Notebook" className="hero__nav--img" /> */}
           </div>
           <div className="hero__main">
             <h1 className="hero__heading-primary">
@@ -87,7 +80,6 @@ function App() {
           </div>
         </div>
         <div
-          // add additional className if isLoaded === true
           className={`hero__right ${
             currentImg.isLoaded ? "hero__right--loaded" : ""
           }`}
