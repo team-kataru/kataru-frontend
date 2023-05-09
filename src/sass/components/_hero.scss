@@ -1,7 +1,7 @@
 .hero {
   height: 90vh;
   display: flex;
-  gap: 4rem;
+  gap: 5rem;
 
   &__left {
     display: flex;
@@ -35,7 +35,7 @@
     }
 
     &--img {
-      height: 60%;
+      height: 50%;
     }
   }
 
@@ -75,7 +75,7 @@
   }
 
   &__right {
-    width: 50%; // define
+    width: 50%;
     background-image: linear-gradient(
         to right bottom,
         rgba($blue-violet, 0.4),
