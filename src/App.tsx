@@ -1,7 +1,7 @@
 import "./sass/main.scss";
 
 // JSX image import
-// import girlReader from "./img/girl_reader.png";
+import doc from "./img/icons/doc.png";
 
 function App() {
   return (
@@ -9,8 +9,13 @@ function App() {
       <div className="hero__left">
         <div className="hero__nav">
           <a href="#" className="hero__nav--link">
-            Be Inspired
+            Sign me up!
           </a>
+          <img
+            src={doc}
+            alt="Image of a colourful pencil"
+            className="hero__nav--img"
+          />
         </div>
         <div className="hero__main">
           <h1 className="hero__heading-primary">
