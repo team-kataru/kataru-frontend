@@ -33,11 +33,12 @@ function App() {
   return (
     <section className="hero">
       <div className="hero__left">
+        {/* TODO Rethink what to have here */}
         <div className="hero__nav">
           <a href="#" className="hero__nav--link">
-            Sign me up!
+            Show me more!
           </a>
-          <img src={doc} alt="Image of Notebook" className="hero__nav--img" />
+          {/* <img src={doc} alt="Image of Notebook" className="hero__nav--img" /> */}
         </div>
         <div className="hero__main">
           <h1 className="hero__heading-primary">
@@ -54,8 +55,7 @@ function App() {
           <p className="hero__detail--text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
             blanditiis quasi corporis fugit pariatur alias totam, dolor,
-            possimus nostrum, at facilis? Officia vel voluptas laborum quae
-            rerum tempore quam laboriosam?
+            possimus nostrum.
           </p>
         </div>
       </div>
