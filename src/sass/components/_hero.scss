@@ -76,15 +76,8 @@
 
   &__right {
     width: 50%;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($blue-violet, 0.4),
-        rgba($azure, 0.7)
-      ),
-      url(../../img/girl_reader.png);
     background-size: cover; // scale to fit on resize
     background-position: top; // area not to crop on resize
-
     animation: slide-fade-in 1s;
   }
 }
