@@ -2,6 +2,7 @@
   height: 90vh;
   display: flex;
   gap: 5rem;
+  margin-bottom: 3rem;
 
   &__left {
     display: flex;
@@ -34,9 +35,9 @@
       }
     }
 
-    &--img {
-      height: 50%;
-    }
+    // &--img {
+    //   height: 50%;
+    // }
   }
 
   &__main {
@@ -58,6 +59,7 @@
 
     &--sub {
       font-size: $font-size-large;
+      font-style: italic;
       display: block;
     }
   }
@@ -66,18 +68,25 @@
     color: $color-grey-dark;
     font-size: $font-size-medium;
     font-style: italic;
+    padding-left: 12rem;
   }
 
   &__detail {
     width: 55%;
     font-size: $default-font-size;
     color: $color-grey-dark;
+    margin-top: 8rem;
   }
 
   &__right {
-    width: 50%;
+    width: 55%;
+    border-radius: 0 0 0 5px;
+    box-shadow: 0 10px 20px rgba($color-grey-dark, 0.5);
     background-size: cover; // scale to fit on resize
-    background-position: bottom; // area not to crop on resize
-    animation: slide-fade-in 1s;
+    background-position: top; // area not to crop on resize
+
+    &--loaded {
+      animation: slide-fade-in 1s;
+    }
   }
 }
