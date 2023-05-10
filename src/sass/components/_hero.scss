@@ -115,11 +115,12 @@
     }
 
     &--image.active {
+      animation: 0.5s ease-out slide-fade-in; // fix initial image transition on load page
       opacity: 1; // only show if active
       left: 0;
     }
     &--image.prev {
-      left: -100%; // move left if no longer active
+      left: -80%; // move left if no longer active
     }
     &--image.next {
       left: 100%; // offset until active
