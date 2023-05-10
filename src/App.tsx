@@ -1,6 +1,8 @@
 import { useState, useEffect, Fragment } from "react";
 import "./sass/main.scss";
 
+// TODO check importing images & preloading images
+// Here simply using local URLs - process.env.PUBLIC_URL + "/img/hero/" + imageUrl
 const IMAGE_LIST = [
   "hero1.png",
   "hero2.png",
@@ -8,6 +10,7 @@ const IMAGE_LIST = [
   "hero4.png",
   "hero5.png",
   "hero6.png",
+  "hero7.png",
 ];
 const TRANSITION_DELAY_MS = 5000;
 
@@ -30,8 +33,8 @@ function App() {
       <section className="hero">
         <div className="hero__left">
           <div className="hero__nav">
-            <a href="#" className="hero__nav--link">
-              Sign me up!
+            <a href="#about-scroll" className="hero__nav--link">
+              Tell me more!
             </a>
           </div>
           <div className="hero__main">
@@ -55,6 +58,7 @@ function App() {
           </div>
         </div>
         <div className="hero__right">
+          <div className="hero__gradient"></div>
           <div className="hero__slider">
             {IMAGE_LIST.map((imageUrl, index) => (
               <img
@@ -71,11 +75,10 @@ function App() {
               />
             ))}
           </div>
-          <div className="hero__gradient"></div>
         </div>
       </section>
 
-      <section className="about">
+      <section id="about-scroll" className="about">
         <div>HOW DOES IT WORK?</div>
       </section>
     </Fragment>
