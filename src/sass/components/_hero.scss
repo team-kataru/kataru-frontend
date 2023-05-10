@@ -111,18 +111,18 @@
       height: 100%;
       opacity: 0;
       transition: opacity 0.5s, left 0.5s;
-      z-index: 0; // make sure they are behind the gradient
+      z-index: 0; // make sure behind the gradient
     }
 
     &--image.active {
-      opacity: 1;
+      opacity: 1; // only show if active
       left: 0;
     }
     &--image.prev {
-      left: -100%;
+      left: -100%; // move left if no longer active
     }
     &--image.next {
-      left: 100%;
+      left: 100%; // offset until active
     }
   }
 }
