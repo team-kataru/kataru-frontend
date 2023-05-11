@@ -7,7 +7,6 @@ const IMAGE_LIST = [
   "hero4.png",
   "hero5.png",
   "hero6.png",
-  "hero7.png",
 ];
 const TRANSITION_DELAY_MS = 5000;
 
