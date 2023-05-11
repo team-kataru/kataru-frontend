@@ -1,13 +1,13 @@
 .features {
+  background-color: $color-grey-light-2;
+  font-size: $font-size-medium;
+  text-align: center;
   padding: 15rem;
   padding-top: 8rem;
-  background-color: $color-grey-light-2;
-  text-align: center;
-  font-size: $font-size-medium;
 
   &__title {
-    color: $amber;
-    font-size: $font-size-medium;
+    color: $orange-pantone;
+    font-size: $font-size-medium-x2;
     margin-bottom: 8rem;
   }
 
