@@ -16,10 +16,6 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 4rem;
     row-gap: 4rem;
-    // set initial state and transition property
-    opacity: 0;
-    transform: translateY(10%);
-    transition: all 1.5s;
 
     &--item {
       border-radius: 5px;
@@ -28,11 +24,16 @@
       text-align: center;
       // Testing mixin
       @include hover-card-with-shadow;
+      // set initial state before scrolling transition
+      opacity: 0;
+      transform: translateY(10%);
+      transition: all 1.5s;
     }
   }
 }
 
 .fade-in {
+  // scrolling transition
   transform: translateX(0);
   opacity: 1;
 }
