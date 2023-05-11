@@ -1,16 +1,13 @@
 import { Fragment } from "react";
-import Hero from "./components/Hero";
+import Hero from "./components/lp/Hero";
 import "./sass/main.scss";
+import Features from "./components/lp/Features";
 
 function App() {
   return (
     <Fragment>
-      {/* LP - Hero Section */}
       <Hero />
-
-      <section id="about-scroll" className="about">
-        <div>HOW DOES IT WORK?</div>
-      </section>
+      <Features />
     </Fragment>
   );
 }
