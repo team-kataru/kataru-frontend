@@ -16,6 +16,7 @@ function Features() {
   useObserver(leftCellRef, makeLeftVisible, options);
   useObserver(rightCellRef, makeRightVisible, options);
 
+  // TODO export grid?
   return (
     // id for scrolling link
     <section id="about-scroll" className="features">

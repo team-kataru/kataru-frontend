@@ -1,10 +1,10 @@
 @mixin hover-card-with-shadow {
   border-radius: 5px;
-  box-shadow: 0 3px 30px rgba($color-grey-dark, 0.1);
+  box-shadow: 0 12px 5px rgba($color-grey-light-2, 0.5);
   transition: all 1s;
 
   &:hover {
-    transform: translateY(-3%);
-    box-shadow: 0 1px 10px rgba($color-grey-dark, 0.05);
+    transform: translateY(-2%);
+    box-shadow: 0 9px 15px rgba($color-grey-light-2, 0.05);
   }
 }
