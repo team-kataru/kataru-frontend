@@ -18,15 +18,16 @@
     row-gap: 4rem;
     // set initial state and transition property
     opacity: 0;
-    transform: translateY(-10%);
-    transition: all 1s;
+    transform: translateY(10%);
+    transition: all 1.5s;
 
     &--item {
-      border: 1px solid $color-black;
       border-radius: 5px;
       background-color: $color-white;
       padding: 10rem;
       text-align: center;
+      // Testing mixin
+      @include hover-card-with-shadow;
     }
   }
 }
