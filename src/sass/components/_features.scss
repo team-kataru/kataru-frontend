@@ -1,6 +1,6 @@
 .features {
   padding: 15rem;
-  padding-top: 6rem;
+  padding-top: 8rem;
   background-color: $color-grey-light-2;
   text-align: center;
   font-size: $font-size-medium;
@@ -8,21 +8,30 @@
   &__title {
     color: $amber;
     font-size: $font-size-medium;
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 
   &__grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 4rem;
     row-gap: 4rem;
+    // set initial state and transition property
+    opacity: 0;
+    transform: translateY(-10%);
+    transition: all 1s;
 
     &--item {
       border: 1px solid $color-black;
       border-radius: 5px;
-      background-color: $color-grey-light-2;
+      background-color: $color-white;
       padding: 10rem;
       text-align: center;
     }
   }
+}
+
+.fade-in {
+  transform: translateX(0);
+  opacity: 1;
 }

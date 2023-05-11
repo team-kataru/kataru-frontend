@@ -9,24 +9,20 @@ type options = IntersectionObserverInit;
 const useObserver = (ref: ref, callback: callback, options?: options) => {
   // Run code on mounting
   useEffect(() => {
-    // Instantiate an observer
-    // Takes callback and options; callback is triggered when observed element intersects
+    // Instantiate an observer, with a callback that is triggered at intersection change (adjusted by options)
+    // Our callback is triggered when observed element intersects
     const observer = new IntersectionObserver((entries) => {
-      // Loop if tracking multiple elements
+      // Loop tracked elements (1 length array if one element)
       entries.forEach((entry) => {
-        // TODO delete log
-        console.log(entry);
-
-        // Call callback if element is visible
+        // Invoke callback if element visible
         if (entry.isIntersecting) {
           callback();
-          // also stop observing once visible - TODO change this?
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
-    // assign observer to ref, if ref exists
+    // Assign observer if ref exists
     if (ref.current) {
       observer.observe(ref.current);
     }
