@@ -23,23 +23,18 @@
       border-radius: 5px;
       background-color: $color-white;
       text-align: center;
-      // Testing mixin
-      @include hover-card-with-shadow;
       // set initial state before scrolling transition
       opacity: 0;
       transform: translateY(10%);
       transition: all 1.5s;
+      // Testing mixin for multiple properties
+      @include hover-card-with-shadow;
     }
   }
 }
 
-.fade-in {
-  // scrolling transition
+// INTERSECTION EFFECTS
+.fade-in-on-scroll {
   transform: translateX(0);
-  opacity: 1;
-}
-
-.turn-red {
-  background-color: orangered;
   opacity: 1;
 }

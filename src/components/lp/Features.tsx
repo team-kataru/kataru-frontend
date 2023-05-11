@@ -1,4 +1,6 @@
 import { useRef, useState } from "react";
+// Here using custom hook to monitor & react to intersection
+// But note, 'react-intersection-observer' library also available
 import useObserver from "../../hooks/useObserver";
 
 function Features() {
@@ -7,21 +9,23 @@ function Features() {
   const [isLeftVisible, setIsLeftVisible] = useState(false);
   const [isRightVisible, setIsRightVisible] = useState(false);
 
-  // Invoke custom hook to mount observers, calling makeVisible when elements intersect
   const makeLeftVisible = () => setIsLeftVisible(true);
   const makeRightVisible = () => setIsRightVisible(true);
+  // offset intersection by 120px vertically
   const options = { rootMargin: "-120px 0px" };
   useObserver(leftCellRef, makeLeftVisible, options);
   useObserver(rightCellRef, makeRightVisible, options);
 
   return (
-    // id for smooth-scrolling link
+    // id for scrolling link
     <section id="about-scroll" className="features">
       <h2 className="features__title">HOW DOES IT WORK?</h2>
       <div className="features__grid">
         <div
           ref={leftCellRef}
-          className={`features__grid--item ${isLeftVisible ? "fade-in" : ""}`}
+          className={`features__grid--item ${
+            isLeftVisible ? "fade-in-on-scroll" : ""
+          }`}
         >
           Row 1 Left
         </div>
@@ -29,7 +33,9 @@ function Features() {
         <div className="features__grid--item">Row 2 Left</div>
         <div
           ref={rightCellRef}
-          className={`features__grid--item ${isRightVisible ? "turn-red" : ""}`}
+          className={`features__grid--item ${
+            isRightVisible ? "fade-in-on-scroll" : ""
+          }`}
         >
           Row 2 Right
         </div>
