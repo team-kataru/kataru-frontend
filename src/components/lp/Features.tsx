@@ -3,12 +3,11 @@ import useObserver from "../../hooks/useObserver";
 
 function Features() {
   const gridRef = useRef<HTMLDivElement>(null);
-  const [gridIsVisible, setGridIsVisible] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   // Invoke custom hook to mount observer, calling makeVisible when element intersects
-  const makeVisible = () => setGridIsVisible(true);
-  const options = { rootMargin: "-50px 0px" };
-  useObserver(gridRef, makeVisible, options);
+  const makeVisible = () => setVisible(true);
+  useObserver(gridRef, makeVisible, { rootMargin: "-120px 0px" });
 
   return (
     // id for smooth-scrolling link
@@ -17,7 +16,7 @@ function Features() {
 
       <div
         ref={gridRef}
-        className={`features__grid ${gridIsVisible ? "fade-in" : ""}`}
+        className={`features__grid ${visible ? "fade-in" : ""}`}
       >
         <div className="features__grid--item">Row 1 Left</div>
         <div className="features__grid--item">Row 1 Right</div>

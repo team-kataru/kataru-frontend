@@ -1,33 +1,32 @@
 import { useEffect } from "react";
 
+// Custom hook to instantiate an observer and assign an element, then trigger a callback once element is visible
+
 // Types
 type ref = React.MutableRefObject<Element | null>;
 type callback = () => void;
 type options = IntersectionObserverInit;
 
-// Custom hook to instantiate an observer and assign an element, then trigger a callback once element is visible
 const useObserver = (ref: ref, callback: callback, options?: options) => {
-  // Run code on mounting
+  // Run on mounting and if dependencies change
   useEffect(() => {
-    // Instantiate an observer, with a callback that is triggered at intersection change (adjusted by options)
-    // Our callback is triggered when observed element intersects
+    // Instantiate observer, entries at each intersection change
     const observer = new IntersectionObserver((entries) => {
-      // Loop tracked elements (1 length array if one element)
       entries.forEach((entry) => {
-        // Invoke callback if element visible
         if (entry.isIntersecting) {
+          // Invoke callback if element visible
           callback();
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
-    // Assign observer if ref exists
+    // Assign
     if (ref.current) {
       observer.observe(ref.current);
     }
 
-    // Clean up on hook unmount
+    // Clean up
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
