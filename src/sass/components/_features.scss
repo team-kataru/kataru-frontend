@@ -18,9 +18,10 @@
     row-gap: 4rem;
 
     &--item {
+      height: 40rem;
+      padding: 5rem;
       border-radius: 5px;
       background-color: $color-white;
-      padding: 10rem;
       text-align: center;
       // Testing mixin
       @include hover-card-with-shadow;
@@ -35,5 +36,10 @@
 .fade-in {
   // scrolling transition
   transform: translateX(0);
+  opacity: 1;
+}
+
+.turn-red {
+  background-color: orangered;
   opacity: 1;
 }

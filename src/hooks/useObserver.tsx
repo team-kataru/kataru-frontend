@@ -8,28 +8,28 @@ type callback = () => void;
 type options = IntersectionObserverInit;
 
 const useObserver = (ref: ref, callback: callback, options?: options) => {
-  // Run on mounting and if dependencies change
   useEffect(() => {
-    // Instantiate observer, entries at each intersection change
+    // Instantiate observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Invoke callback if element visible
+          // Invoke callback if visible
           callback();
           observer.unobserve(entry.target);
         }
       });
     }, options);
 
-    // Assign
+    // Assign ref to observer ()
+    const currentRef = ref.current!;
     if (ref.current) {
-      observer.observe(ref.current);
+      observer.observe(currentRef);
     }
 
     // Clean up
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [ref, callback, options]);
