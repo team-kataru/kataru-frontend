@@ -16,28 +16,26 @@ function Features() {
   useObserver(leftCellRef, makeLeftVisible, options);
   useObserver(rightCellRef, makeRightVisible, options);
 
+  // To conditionally add animation class
+  const leftScrollAnimate = `features__grid--item ${
+    isLeftVisible ? "fade-in-on-scroll" : ""
+  }`;
+  const rightScrollAnimate = `features__grid--item ${
+    isRightVisible ? "fade-in-on-scroll" : ""
+  }`;
+
   // TODO export grid?
   return (
     // id for scrolling link
     <section id="about-scroll" className="features">
       <h2 className="features__title">HOW DOES IT WORK?</h2>
       <div className="features__grid">
-        <div
-          ref={leftCellRef}
-          className={`features__grid--item ${
-            isLeftVisible ? "fade-in-on-scroll" : ""
-          }`}
-        >
+        <div ref={leftCellRef} className={leftScrollAnimate}>
           Row 1 Left
         </div>
         <div className="features__grid--item">Row 1 Right</div>
         <div className="features__grid--item">Row 2 Left</div>
-        <div
-          ref={rightCellRef}
-          className={`features__grid--item ${
-            isRightVisible ? "fade-in-on-scroll" : ""
-          }`}
-        >
+        <div ref={rightCellRef} className={rightScrollAnimate}>
           Row 2 Right
         </div>
       </div>
