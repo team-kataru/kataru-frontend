@@ -7,7 +7,8 @@
 
   &__title {
     color: $orange-pantone;
-    font-size: $font-size-medium;
+
+    font-size: $font-size-large;
     margin-bottom: 8rem;
   }
 
@@ -30,8 +31,9 @@
     opacity: 0;
     transform: translateY(10%);
     transition: all 1.5s;
+
     // Testing mixin for multiple properties
-    @include hover-card-with-shadow;
+    // @include hover-card-with-shadow;
   }
 
   &__title {
@@ -46,13 +48,16 @@
 
     &--text {
       font-size: $default-font-size;
+      color: $color-grey-dark;
       padding: 1rem;
       width: 50%;
     }
 
     &--img {
       padding: 1rem;
-      width: 50%;
+      // TODO fix sizing and ratios
+      width: 20rem;
+      height: 20rem;
     }
   }
 }

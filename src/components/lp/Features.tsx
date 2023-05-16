@@ -4,25 +4,25 @@ import FeatureCard from "./FeatureCard";
 const FEATURES_DATA = [
   {
     id: 1,
-    title: "This is a test title",
+    title: "Choose a genre:",
     img: "/img/hero/hero1.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
     id: 2,
-    title: "This is another test title",
+    title: "Choose a story:",
     img: "/img/hero/hero2.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
     id: 3,
-    title: "This is a third test title",
+    title: "Use prompts to write:",
     img: "/img/hero/hero3.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
     id: 4,
-    title: "This is a fourth test title",
+    title: "Complete your masterpiece!",
     img: "/img/hero/hero4.png",
     text: "This is some test content. For example, choose your story!",
   },
