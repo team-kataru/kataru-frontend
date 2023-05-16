@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import useObserver from "../../hooks/useObserver";
 
 type Props = {
+  key: number;
   title: string;
   img: string;
   text: string;
@@ -23,10 +24,10 @@ function FeatureCard({ title, img, text }: Props) {
       <div ref={cardRef} className={classes}>
         <h3 className="card__title">{title}</h3>
         <div className="card__content">
-          <p>{text}</p>
+          <p className="card__content--text">{text}</p>
           <img
-            className="title__img"
-            src={process.env.PUBLIC_URL + "/img/hero/hero1.png"}
+            className="card__content--img"
+            src={process.env.PUBLIC_URL + img}
             alt="Card Image"
           />
         </div>

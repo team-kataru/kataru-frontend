@@ -3,23 +3,27 @@ import FeatureCard from "./FeatureCard";
 // Static content for feature cards
 const FEATURES_DATA = [
   {
+    id: 1,
     title: "This is a test title",
-    img: "/img/hero/",
+    img: "/img/hero/hero1.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
+    id: 2,
     title: "This is another test title",
-    img: "/img/hero/",
+    img: "/img/hero/hero2.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
+    id: 3,
     title: "This is a third test title",
-    img: "/img/hero/",
+    img: "/img/hero/hero3.png",
     text: "This is some test content. For example, choose your story!",
   },
   {
+    id: 4,
     title: "This is a fourth test title",
-    img: "/img/hero/",
+    img: "/img/hero/hero4.png",
     text: "This is some test content. For example, choose your story!",
   },
 ];
@@ -33,6 +37,7 @@ function Features() {
         {FEATURES_DATA.map((feature) => {
           return (
             <FeatureCard
+              key={feature.id}
               title={feature.title}
               img={feature.img}
               text={feature.text}
