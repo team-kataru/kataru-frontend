@@ -33,6 +33,32 @@
     // Testing mixin for multiple properties
     @include hover-card-with-shadow;
   }
+
+  &__title {
+    font-size: $font-size-medium;
+    color: $color-grey-dark;
+    margin-bottom: 4rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.title {
+  // flex: 1;
+
+  &__text {
+    font-size: $default-font-size;
+    padding: 1rem;
+    width: 50%;
+  }
+
+  &__img {
+    padding: 1rem;
+    width: 50%;
+  }
 }
 
 // CARD - ON SCROLL
