@@ -49,7 +49,7 @@ function Hero() {
             You are full of beautiful stories. We present hand-curated,
             story-driven prompts to help you hone your craft and create your
             best work. Simply choose your favourite genre, and let your
-            imagination run wild!
+            imagination run wild.
           </p>
         </div>
       </div>

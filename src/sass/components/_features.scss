@@ -16,24 +16,26 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 4rem;
     row-gap: 4rem;
-
-    &--item {
-      height: 40rem;
-      padding: 5rem;
-      border-radius: 5px;
-      background-color: $color-white;
-      text-align: center;
-      // set initial state before scrolling transition
-      opacity: 0;
-      transform: translateY(10%);
-      transition: all 1.5s;
-      // Testing mixin for multiple properties
-      @include hover-card-with-shadow;
-    }
   }
 }
 
-// INTERSECTION EFFECTS
+.card {
+  &__cell {
+    height: 40rem;
+    padding: 5rem;
+    border-radius: 5px;
+    background-color: $color-white;
+    text-align: center;
+    // set initial state before scrolling transition
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 1.5s;
+    // Testing mixin for multiple properties
+    @include hover-card-with-shadow;
+  }
+}
+
+// CARD - ON SCROLL
 .fade-in-on-scroll {
   transform: translateX(0);
   opacity: 1;
