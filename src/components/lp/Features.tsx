@@ -23,9 +23,8 @@ const FEATURES_DATA = [
   {
     id: 3,
     title: [
-      { text: "3. Start crafting ", color: "#555" },
-      { text: "your story", color: "#ffbe0bff" },
-      { text: " :-)", color: "#555" },
+      { text: "3. Start crafting your ", color: "#555" },
+      { text: "story", color: "#ffbe0bff" },
     ],
     img: "/img/feature/temples.png",
     text: "It's time to craft your masterpiece, word by word. With each line, your story will begin to take shape. And we'll be there, giving you ideas to inspire your narrative and help you continue your journey, every step of the way.",
