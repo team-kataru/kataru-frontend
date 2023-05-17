@@ -7,10 +7,10 @@ type Props = {
   key: number;
   title: string;
   img: string;
-  list: string[];
+  text: string;
 };
 
-function FeaturesCard({ title, img, list }: Props) {
+function FeaturesCard({ title, img, text }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -22,7 +22,7 @@ function FeaturesCard({ title, img, list }: Props) {
   // inline dynamic property (includes image url)
   // note, cannot use SASS variables here
   const imageStyle = {
-    backgroundImage: `linear-gradient(to right bottom, rgba(138, 43, 226, 0.4), rgba(0, 127, 255, 0.7)), url(${
+    backgroundImage: `linear-gradient(to right bottom, rgba(138, 43, 226, 0.2), rgba(0, 127, 255, 0.4)), url(${
       process.env.PUBLIC_URL + img
     })`,
   };
@@ -32,13 +32,7 @@ function FeaturesCard({ title, img, list }: Props) {
       <div ref={cardRef} className={classes}>
         <h3 className="card__title">{title.toUpperCase()}</h3>
         <div className="card__content">
-          <ul className="card__content--list">
-            {list.map((item, i) => (
-              <li key={i} className="card__content--item">
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p className="card__content--text">{text}</p>
           <div className="card__content--img" style={imageStyle}></div>
         </div>
       </div>

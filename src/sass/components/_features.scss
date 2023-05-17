@@ -33,11 +33,11 @@
     transition: all 0.7s;
 
     // Testing mixin for multiple properties
-    // @include hover-card-with-shadow;
+    @include hover-card-with-shadow;
   }
 
   &__title {
-    color: $color-grey-dark;
+    color: $color-grey-dark-2;
     font-size: $font-size-medium-1;
     margin-bottom: 3rem;
   }
@@ -48,18 +48,17 @@
     // TODO check how to fill available space under title
     height: 80%;
 
-    &--list {
+    &--text {
+      display: inline-block;
+      border-top: 1px solid $color-grey-dark;
+      line-height: 1.4;
+      font-weight: 400;
+      padding-top: 2rem;
       color: $color-grey-dark;
       font-size: $default-font-size;
       align-self: flex-start;
       list-style: none;
-      text-transform: uppercase;
-      padding-top: 2rem;
       width: 50%;
-    }
-
-    &--item {
-      margin-bottom: 3rem;
     }
 
     &--img {

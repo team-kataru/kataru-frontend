@@ -5,42 +5,26 @@ const FEATURES_DATA = [
   {
     id: 1,
     title: "1. Select your genre",
-    img: "/img/hero/hero1.png",
-    list: [
-      "To get started, choose your favourite genre.",
-      "We have them all, from SF to Fairytale.",
-      "Name your story, and you're ready to go!",
-    ],
+    img: "/img/feature/duo.png",
+    text: "To get started, choose a genre that tickles your fancy. We have them all. Give your story a name (you can change this later),  and you're all ready to begin :-)",
   },
   {
     id: 2,
     title: "2. Receive your first prompt",
-    img: "/img/hero/hero2.png",
-    list: [
-      "Kataru's prompts are story-driven.",
-      "Hand-crafted to lead you through your story.",
-      "One step at a time.",
-    ],
+    img: "/img/feature/astronauts.png",
+    text: "Kataru's prompts are story-driven and hand-crafted, designed to lead you from the beginning to the end of your magnum opus. One step at a time.",
   },
   {
     id: 3,
     title: "3. Start crafting your story",
-    img: "/img/hero/hero3.png",
-    list: [
-      "Word by word, it's time to craft your masterpiece",
-      "With each line, your story grows",
-      "And we'll be there all the way.",
-    ],
+    img: "/img/feature/temples.png",
+    text: "It's time to craft your masterpiece, word by word. With each line, your story will begin to take shape. And we'll be there, giving you ideas to inspire your narrative and help you continue your journey, every step of the way.",
   },
   {
     id: 4,
     title: "4. Unlock achievements!",
-    img: "/img/hero/hero4.png",
-    list: [
-      "Finish stories to earn badges.",
-      "Build writing streaks and track your data",
-      "Grow your library FTW!",
-    ],
+    img: "/img/feature/mountains.png",
+    text: "Finish stories, build streaks, and grow your library of tales to earn achievements and badges!",
   },
 ];
 
@@ -56,7 +40,7 @@ function Features() {
               key={feature.id}
               title={feature.title}
               img={feature.img}
-              list={feature.list}
+              text={feature.text}
             />
           );
         })}
