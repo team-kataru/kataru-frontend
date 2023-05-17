@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 
-// Using custom hook, but react-intersection-observer library also exists
+// using custom hook, but react-intersection-observer library also exists
 import useObserver from "../../hooks/useObserver";
 
 type Props = {
   key: number;
   title: string;
   img: string;
-  text: string;
+  list: string[];
 };
 
-function FeaturesCard({ title, img, text }: Props) {
+function FeaturesCard({ title, img, list }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -30,9 +30,15 @@ function FeaturesCard({ title, img, text }: Props) {
   return (
     <div className="card">
       <div ref={cardRef} className={classes}>
-        <h3 className="card__title">{title}</h3>
+        <h3 className="card__title">{title.toUpperCase()}</h3>
         <div className="card__content">
-          <p className="card__content--text">{text}</p>
+          <ul className="card__content--list">
+            {list.map((item, i) => (
+              <li key={i} className="card__content--item">
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="card__content--img" style={imageStyle}></div>
         </div>
       </div>

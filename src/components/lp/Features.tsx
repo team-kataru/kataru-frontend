@@ -6,25 +6,29 @@ const FEATURES_DATA = [
     id: 1,
     title: "1. Select your genre",
     img: "/img/hero/hero1.png",
-    text: "This is some test content. For example, choose your story!",
+    list: [
+      "To get started, choose your favourite genre.",
+      "We have them all, from SF to Fairytale.",
+      "Name your story, and you're ready to go!",
+    ],
   },
   {
     id: 2,
     title: "2. Receive your first prompt",
     img: "/img/hero/hero2.png",
-    text: "This is some test content. For example, choose your story!",
+    list: ["line1", "line2", "line3"],
   },
   {
     id: 3,
     title: "3. Start crafting your story",
     img: "/img/hero/hero3.png",
-    text: "This is some test content. For example, choose your story!",
+    list: ["line1", "line2", "line3"],
   },
   {
     id: 4,
     title: "4. Unlock achievements!",
     img: "/img/hero/hero4.png",
-    text: "This is some test content. For example, choose your story!",
+    list: ["line1", "line2", "line3"],
   },
 ];
 
@@ -40,7 +44,7 @@ function Features() {
               key={feature.id}
               title={feature.title}
               img={feature.img}
-              text={feature.text}
+              list={feature.list}
             />
           );
         })}

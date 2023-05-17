@@ -23,44 +23,50 @@
 .card {
   &__cell {
     height: 40rem;
-    padding: 2rem;
+    padding: 3rem 3rem;
     border-radius: 5px;
     background-color: $color-white;
-    text-align: center;
+    text-align: left;
     // set initial state before scrolling transition
     opacity: 0;
     transform: translateY(10%);
-    transition: all 1.5s;
+    transition: all 0.7s;
 
     // Testing mixin for multiple properties
     // @include hover-card-with-shadow;
   }
 
   &__title {
-    font-size: $font-size-medium;
     color: $color-grey-dark;
-    margin-bottom: 4rem;
+    font-size: $font-size-medium-1;
+    margin-bottom: 3rem;
   }
 
   &__content {
     display: flex;
     gap: 3rem;
-    // TODO check how to fill 100% of available space under title
+    // TODO check how to fill available space under title
     height: 80%;
 
-    &--text {
-      align-self: flex-start;
-      font-size: $default-font-size;
+    &--list {
       color: $color-grey-dark;
-      padding: 1rem;
+      font-size: $default-font-size;
+      align-self: flex-start;
+      list-style: none;
+      text-transform: uppercase;
+      padding-top: 2rem;
       width: 50%;
     }
 
+    &--item {
+      margin-bottom: 4rem;
+    }
+
     &--img {
+      flex: 1;
       align-self: center;
       padding: 1rem;
-      height: 20rem;
-      width: 20rem;
+      height: 100%;
       border-radius: 5px;
       overflow: none;
       background-size: cover; // scale to fit on resize
