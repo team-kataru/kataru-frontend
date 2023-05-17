@@ -16,19 +16,31 @@ const FEATURES_DATA = [
     id: 2,
     title: "2. Receive your first prompt",
     img: "/img/hero/hero2.png",
-    list: ["line1", "line2", "line3"],
+    list: [
+      "Kataru's prompts are story-driven.",
+      "Hand-crafted to lead you through your story.",
+      "One step at a time.",
+    ],
   },
   {
     id: 3,
     title: "3. Start crafting your story",
     img: "/img/hero/hero3.png",
-    list: ["line1", "line2", "line3"],
+    list: [
+      "Word by word, it's time to craft your masterpiece",
+      "With each line, your story grows",
+      "And we'll be there all the way.",
+    ],
   },
   {
     id: 4,
     title: "4. Unlock achievements!",
     img: "/img/hero/hero4.png",
-    list: ["line1", "line2", "line3"],
+    list: [
+      "Finish stories to earn badges.",
+      "Build writing streaks and track your data",
+      "Grow your library FTW!",
+    ],
   },
 ];
 
