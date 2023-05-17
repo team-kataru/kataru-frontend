@@ -35,7 +35,6 @@ const FEATURES_DATA = [
     title: [
       { text: "4. Unlock ", color: "#555" },
       { text: "achievements", color: "#fb5607ff" },
-      { text: "!", color: "#555" },
     ],
     img: "/img/feature/mountains.png",
     text: "Finish stories, build streaks, and grow your library of tales to earn achievements and badges!",
