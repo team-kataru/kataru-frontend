@@ -5,7 +5,7 @@ import useObserver from "../../hooks/useObserver";
 
 type Props = {
   key: number;
-  title: string;
+  title: { text: string; color: string }[];
   img: string;
   text: string;
 };
@@ -30,7 +30,13 @@ function FeaturesCard({ title, img, text }: Props) {
   return (
     <div className="card">
       <div ref={cardRef} className={classes}>
-        <h3 className="card__title">{title.toUpperCase()}</h3>
+        <h3 className="card__title">
+          {title.map((word, index) => (
+            <span key={index} style={{ color: word.color }}>
+              {word.text.toUpperCase()}
+            </span>
+          ))}
+        </h3>
         <div className="card__content">
           <p className="card__content--text">{text}</p>
           <div className="card__content--img" style={imageStyle}></div>
