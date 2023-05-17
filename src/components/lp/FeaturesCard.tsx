@@ -10,7 +10,7 @@ type Props = {
   text: string;
 };
 
-function FeatureCard({ title, img, text }: Props) {
+function FeaturesCard({ title, img, text }: Props) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -19,21 +19,25 @@ function FeatureCard({ title, img, text }: Props) {
 
   const classes = `card__cell ${isVisible ? "fade-in-on-scroll" : ""}`;
 
+  // inline dynamic property (includes image url)
+  // note, cannot use SASS variables here
+  const imageStyle = {
+    backgroundImage: `linear-gradient(to right bottom, rgba(138, 43, 226, 0.4), rgba(0, 127, 255, 0.7)), url(${
+      process.env.PUBLIC_URL + img
+    })`,
+  };
+
   return (
     <div className="card">
       <div ref={cardRef} className={classes}>
         <h3 className="card__title">{title}</h3>
         <div className="card__content">
           <p className="card__content--text">{text}</p>
-          <img
-            className="card__content--img"
-            src={process.env.PUBLIC_URL + img}
-            alt="Card Image"
-          />
+          <div className="card__content--img" style={imageStyle}></div>
         </div>
       </div>
     </div>
   );
 }
 
-export default FeatureCard;
+export default FeaturesCard;

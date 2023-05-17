@@ -23,7 +23,7 @@
 .card {
   &__cell {
     height: 40rem;
-    padding: 5rem;
+    padding: 2rem;
     border-radius: 5px;
     background-color: $color-white;
     text-align: center;
@@ -44,9 +44,12 @@
 
   &__content {
     display: flex;
-    align-items: center;
+    gap: 3rem;
+    // TODO check how to fill 100% of available space under title
+    height: 80%;
 
     &--text {
+      align-self: flex-start;
       font-size: $default-font-size;
       color: $color-grey-dark;
       padding: 1rem;
@@ -54,10 +57,14 @@
     }
 
     &--img {
+      align-self: center;
       padding: 1rem;
-      // TODO fix sizing and ratios
-      width: 20rem;
       height: 20rem;
+      width: 20rem;
+      border-radius: 5px;
+      overflow: none;
+      background-size: cover; // scale to fit on resize
+      background-position: top; // area not to crop on resize
     }
   }
 }
