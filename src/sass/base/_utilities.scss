@@ -1,9 +1,11 @@
+// using '!important' for utilities, as always want to apply
+
 // highlights
 .u-highlight-1 {
-  color: $orange-pantone;
+  color: $orange-pantone !important;
 }
 .u-highlight-2 {
-  color: $amber;
+  color: $amber !important;
 }
 
 // flex utilities
