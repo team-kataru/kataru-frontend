@@ -2,7 +2,7 @@
   height: 90vh;
   display: flex;
   gap: 5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 
   &__left {
     display: flex;
@@ -81,7 +81,7 @@
     overflow: hidden;
 
     // other
-    width: 55%;
+    width: 55%; // tamatama square
     border-radius: 0 0 0 5px;
     box-shadow: 0 10px 20px rgba($color-grey-dark, 0.5);
     background-size: cover; // scale to fit on resize
@@ -96,8 +96,8 @@
     height: 100%;
     background-image: linear-gradient(
       to right bottom,
-      rgba(131, 56, 236, 0.4),
-      rgba(58, 134, 255, 0.7)
+      rgba($blue-violet, 0.4),
+      rgba($azure, 0.7)
     );
     z-index: 1; // make sure it's on top
   }

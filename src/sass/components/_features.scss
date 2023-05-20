@@ -1,7 +1,81 @@
-.about {
-  height: 75rem;
-  padding: 10rem;
+.features {
   background-color: $color-grey-light-2;
-  text-align: center;
   font-size: $font-size-medium;
+  text-align: center;
+  padding: 15rem;
+  padding-top: 8rem;
+
+  &__title {
+    color: $orange-pantone;
+
+    font-size: $font-size-large;
+    margin-bottom: 8rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+  }
+}
+
+.card {
+  &__cell {
+    height: 40rem;
+    padding: 3rem 3rem;
+    border-radius: 5px;
+    background-color: $color-white;
+    text-align: left;
+    // set initial state before scrolling transition
+    opacity: 0;
+    transform: translateY(10%);
+    transition: all 0.7s;
+
+    // Testing mixin for multiple properties
+    @include hover-card-with-shadow;
+  }
+
+  &__title {
+    color: $color-grey-dark-2;
+    font-size: $font-size-medium-1;
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    display: flex;
+    gap: 3rem;
+    // TODO check how to fill available space under title
+    height: 80%;
+
+    &--text {
+      display: inline-block;
+      border-top: 1px solid $color-grey-dark;
+      line-height: 1.4;
+      font-weight: 400;
+      padding-top: 2rem;
+      color: $color-grey-dark;
+      font-size: $default-font-size;
+      align-self: flex-start;
+      list-style: none;
+      width: 50%;
+    }
+
+    &--img {
+      flex: 1;
+      align-self: center;
+      padding: 1rem;
+      height: 100%;
+      border-radius: 5px;
+      overflow: none;
+      background-size: cover; // scale to fit on resize
+      background-position: top; // area not to crop on resize
+    }
+  }
+}
+
+// CARD - ON SCROLL
+.fade-in-on-scroll {
+  transform: translateX(0);
+  opacity: 1;
 }

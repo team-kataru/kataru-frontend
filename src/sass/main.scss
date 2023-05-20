@@ -1,23 +1,29 @@
 // Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
-// import partials
+// import all partials
 
 // abstracts
+// variables, mixins
 @import "abstracts/functions";
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
 // base
+// e.g. typography - headings, paragraphs
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
 @import "base/utilities";
 
 // components
+// reusable parts - buttons, cards, forms,
 @import "components/hero";
 @import "components/features";
 
 // layout
+// top-level layout blocks, used across all pages, e.g. footer, grids
+@import "layout/footer";
 
 // pages
+// section-level (high-level), non-component stylings
